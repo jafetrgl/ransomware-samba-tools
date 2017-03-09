@@ -19,7 +19,8 @@ for share in $shares; do
 		filename=$(basename "$fullfile")
 		extension="${filename##*.}"
 		filename="${filename%.*}"
-		cp $fullfile /$share/$honey_folder/$filename-$bait_string.$extension
+		dest="${share}/${honey_folder}/${filename}-${bait_string}.${extension}"
+		cp "${fullfile}" "${dest}"
 	done
 	# Everyone needs write permissions here...
 	chmod -R 777 "/$share/$honey_folder"
